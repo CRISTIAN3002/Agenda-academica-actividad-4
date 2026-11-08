@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Académica IAS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agenda Académica</h1>
+            <p id="contador" class="badge">Total de tareas: 0</p>
+        </header>
+
+        <main>
+            <section class="panel-formulario">
+                <h2>Registrar Actividad</h2>
+                <form id="formulario">
+                    <div class="form-group">
+                        <label for="titulo">Descripción de la Tarea:</label>
+                        <input type="text" id="titulo" placeholder="Ej. Práctica de Packet Tracer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="categoria">Materia / Categoría:</label>
+                        <select id="categoria">
+                            <option value="">Selecciona una opción...</option>
+                            <option value="Redes">Redes</option>
+                            <option value="Base de Datos">Base de Datos</option>
+                            <option value="Sistemas">Sistemas</option>
+                            <option value="Inglés">Inglés</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha">Fecha Límite:</label>
+                        <input type="date" id="fecha">
+                    </div>
+
+                    <button type="submit" id="btn-guardar" class="btn-primary">Guardar Tarea</button>
+                    <p id="mensaje-error" class="error oculto">Por favor, completa todos los campos correctamente.</p>
+                </form>
+            </section>
+
+            <section class="panel-lista">
+                <div class="filtros">
+                    <label for="filtro-categoria">Filtrar por Materia:</label>
+                    <select id="filtro-categoria">
+                        <option value="Todas">Todas</option>
+                        <option value="Redes">Redes</option>
+                        <option value="Base de Datos">Base de Datos</option>
+                        <option value="Sistemas">Sistemas</option>
+                        <option value="Inglés">Inglés</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                
+                <div id="lista-tareas" class="grid-tareas">
+                    <!-- Las tareas se inyectarán aquí mediante JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
